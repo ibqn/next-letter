@@ -11,9 +11,7 @@ export async function POST(request: Request) {
   const { email } = body
 
   const subscription = await prisma.subscription.create({
-    data: {
-      email,
-    },
+    data: { email },
   })
 
   return NextResponse.json(subscription)
