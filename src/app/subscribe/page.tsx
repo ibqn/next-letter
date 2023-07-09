@@ -1,5 +1,5 @@
-import { Logo } from '@/components/logo'
-import { SubscribeForm } from '@/components/subscribe-form'
+import { Logo } from "@/components/logo"
+import { SubscribeForm } from "@/components/subscribe-form"
 
 type Props = {}
 
