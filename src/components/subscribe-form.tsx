@@ -43,7 +43,7 @@ export const SubscribeForm = (props: Props) => {
     } catch (error) {
       console.log(error)
       if (axios.isAxiosError(error) && error?.response?.status === 409) {
-        toast({ title: "Subscription error", description: "This Email is already subscribed!", variant: "destructive" })
+        toast({ title: "Subscription error", description: "This Email is already subscribed!", variant: "yellow" })
       } else {
         toast({ title: "Subscription error", description: "Something went wrong!", variant: "destructive" })
       }
