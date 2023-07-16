@@ -17,6 +17,6 @@ export async function DELETE(request: Request, { params }: Props) {
 
     return NextResponse.json(subscription)
   } catch (error) {
-    return NextResponse.json({ message: "error occurred on un-subscription" }, { status: 500 })
+    return NextResponse.json({ message: "error occurred on unsubscribe" }, { status: 500 })
   }
 }
