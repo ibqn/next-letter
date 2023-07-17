@@ -18,7 +18,7 @@ export async function POST(request: Request) {
   } catch (error) {
     if (error instanceof z.ZodError) {
       const messages = error.issues.map((issue) => issue.message)
-      return NextResponse.json({ messages })
+      return NextResponse.json({ messages }, { status: 422 })
     }
 
     if (error instanceof Prisma.PrismaClientKnownRequestError) {
