@@ -1,1 +1,1 @@
-export { type SubscriptionPayload, SubscriptionValidator } from "./subscription"
+export { type SubscriptionPayload, subscriptionValidator } from "./subscription"

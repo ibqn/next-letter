@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/prisma"
-import { SubscriptionValidator } from "@/lib/validators"
+import { subscriptionValidator } from "@/lib/validators"
 import { Prisma } from "@prisma/client"
 import { NextResponse } from "next/server"
 import { z } from "zod"
@@ -8,7 +8,7 @@ export async function POST(request: Request) {
   try {
     const body = await request.json()
 
-    const { email } = SubscriptionValidator.parse(body)
+    const { email } = subscriptionValidator.parse(body)
 
     const subscription = await prisma.subscription.create({
       data: { email },
