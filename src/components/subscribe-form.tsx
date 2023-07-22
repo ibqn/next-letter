@@ -7,14 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
 import axios from "axios"
 import { useToast } from "./ui/use-toast"
-
-type FormaData = {
-  email: string
-}
-
-const schema = z.object({
-  email: z.string().email({ message: "A valid Email address is required" }),
-})
+import { subscriptionValidator, type SubscriptionPayload } from "@/lib/validators"
 
 type Props = {}
 
@@ -24,8 +17,8 @@ export const SubscribeForm = (props: Props) => {
     register,
     reset,
     formState: { errors },
-  } = useForm<FormaData>({
-    resolver: zodResolver(schema),
+  } = useForm<SubscriptionPayload>({
+    resolver: zodResolver(subscriptionValidator),
   })
 
   const { toast } = useToast()
