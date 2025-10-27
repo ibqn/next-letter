@@ -6,12 +6,4 @@ First, run the development server:
 pnpm dev
 ```
 
-```bash
-pnpm dlx shadcn-ui@latest init
-```
-
-add button
-
-```bash
-pnpm dlx shadcn-ui@latest add button
-```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
