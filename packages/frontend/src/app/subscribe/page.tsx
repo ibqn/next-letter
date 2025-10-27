@@ -13,7 +13,7 @@ export default function Subscribe(props: Props) {
             Join my Newsletter!
           </h1>
         </div>
-        <p className="leading-7 [&:not(:first-child)]:mt-6">
+        <p className="leading-7 not-first:mt-6">
           Elevate your coding skills with exclusive access to the latest tutorials, expert tips, coding challenges, and
           more! Whether you're a beginner or a seasoned developer, my compact newsletter has everything to keep you
           ahead. Join the community and transform your coding dreams into reality. Sign up for free today!
