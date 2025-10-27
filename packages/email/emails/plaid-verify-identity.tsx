@@ -9,7 +9,6 @@ import {
   Section,
   Text,
 } from '@react-email/components';
-import * as React from 'react';
 
 interface PlaidVerifyIdentityEmailProps {
   validationCode?: string;
@@ -20,7 +19,7 @@ const baseUrl = process.env.VERCEL_URL
   : '';
 
 export const PlaidVerifyIdentityEmail = ({
-  validationCode = '144833',
+  validationCode,
 }: PlaidVerifyIdentityEmailProps) => (
   <Html>
     <Head />
@@ -54,6 +53,10 @@ export const PlaidVerifyIdentityEmail = ({
   </Html>
 );
 
+PlaidVerifyIdentityEmail.PreviewProps = {
+  validationCode: '144833',
+} as PlaidVerifyIdentityEmailProps;
+
 export default PlaidVerifyIdentityEmail;
 
 const main = {
@@ -67,7 +70,7 @@ const container = {
   borderRadius: '5px',
   boxShadow: '0 5px 10px rgba(20,50,70,.2)',
   marginTop: '20px',
-  width: '360px',
+  maxWidth: '360px',
   margin: '0 auto',
   padding: '68px 0 130px',
 };
