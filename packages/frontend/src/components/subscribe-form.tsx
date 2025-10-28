@@ -8,9 +8,8 @@ import axios from "axios"
 import { toast } from "sonner"
 import { subscriptionValidator, type SubscriptionPayload } from "@/lib/validators"
 
-type Props = {}
 
-export const SubscribeForm = (props: Props) => {
+export const SubscribeForm = () => {
   const {
     handleSubmit,
     register,
