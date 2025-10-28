@@ -7,7 +7,7 @@ export default function Subscribe() {
     <main className="container flex flex-col gap-20 p-0 md:py-24">
       <div className="mx-auto flex flex-col rounded-lg border border-neutral-400/40 px-10 py-8 shadow-xl md:w-1/2">
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Logo className="h-20 w-20" />
+          <Logo className="size-16" />
           <h1 className="scroll-m-20 text-center text-4xl font-extrabold tracking-tight md:text-left lg:text-5xl">
             Join my Newsletter!
           </h1>
@@ -23,9 +23,9 @@ export default function Subscribe() {
 
       <Card className="mx-auto w-full max-w-lg">
         <CardHeader>
-          <CardTitle className="flex gap-6">
-            <Logo className="size-20" />
-            <h1 className="scroll-m-20 text-center text-4xl font-extrabold tracking-tight md:text-left lg:text-5xl">
+          <CardTitle className="flex items-center gap-6">
+            <Logo className="size-16" />
+            <h1 className="text-center text-3xl font-extrabold tracking-tight md:text-left lg:text-4xl">
               Join my Newsletter!
             </h1>
           </CardTitle>
