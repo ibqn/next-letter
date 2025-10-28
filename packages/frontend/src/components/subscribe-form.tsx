@@ -22,7 +22,7 @@ export const SubscribeForm = () => {
   const onSubmit = handleSubmit(async (data) => {
     console.log(data)
     try {
-      await axios.post("/api/subscription", data)
+      await axios.post("/subscription", data)
       reset()
       toast.success("Congratulations, You have successfully subscribed.")
     } catch (error) {
