@@ -1,9 +1,9 @@
 import './globals.css'
 import type{  ReactNode } from 'react'
-import { Inter } from 'next/font/google'
+import { fontSans, fontMono } from '@/lib/fonts'
 import { Toaster } from '@/components/ui/sonner'
+import { cn } from '@/lib/utils'
 
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -17,7 +17,7 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+        <body className={cn("bg-background min-h-svh font-sans antialiased", fontSans.variable, fontMono.variable)}>
         {children}
         <Toaster />
       </body>
