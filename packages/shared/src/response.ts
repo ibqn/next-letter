@@ -3,7 +3,7 @@ export type SuccessResponse<T = void> = {
   data: T
 }
 
-export type ErrorResponse<E> = {
+export type ErrorResponse<E = string> = {
   success: false
   error: E
 }
