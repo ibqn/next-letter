@@ -1,0 +1,16 @@
+{
+  "name": "shared",
+  "type": "module",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "lint": "eslint .",
+    "build": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^24.9.1",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+  }
+}
