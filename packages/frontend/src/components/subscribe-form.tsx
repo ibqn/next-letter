@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import axios from "axios"
+import { axios } from "@/api/axios"
 import { toast } from "sonner"
 import { subscriptionValidator, type SubscriptionPayload } from "@/lib/validators"
-
+import { isAxiosError } from "axios"
 
 export const SubscribeForm = () => {
   const {
@@ -19,17 +19,15 @@ export const SubscribeForm = () => {
     resolver: zodResolver(subscriptionValidator),
   })
 
-    const onSubmit = handleSubmit(async (data) => {
+  const onSubmit = handleSubmit(async (data) => {
     console.log(data)
     try {
-      await axios.post("/api/subscribe", data)
+      await axios.post("/api/subscription", data)
       reset()
-      toast.success(
-        "Congratulations, You have successfully subscribed."
-      )
+      toast.success("Congratulations, You have successfully subscribed.")
     } catch (error) {
       console.log(error)
-      if (axios.isAxiosError(error) && error?.response?.status === 409) {
+      if (isAxiosError(error) && error?.response?.status === 409) {
         toast("This Email is already subscribed!")
       } else {
         toast.error("Something went wrong!")
