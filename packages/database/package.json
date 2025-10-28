@@ -20,6 +20,7 @@
     "drizzle-zod": "~0.8.3",
     "lodash.unset": "^4.5.2",
     "postgres": "^3.4.7",
+    "shared": "workspace:*",
     "zod": "^4.1.12"
   },
   "devDependencies": {
