@@ -4,10 +4,6 @@ import { env } from "../env"
 import type { ReCaptchaResponse } from "shared/src/recaptcha"
 
 export class ReCaptchaClient extends BaseClient {
-  constructor() {
-    super()
-  }
-
   async verifyToken(token: string): Promise<ReCaptchaResponse> {
     const secret = env.RE_CAPTCHA_SECRET_KEY
     this.logger.info("Verifying reCAPTCHA token with Google API")
