@@ -1,24 +1,22 @@
 import type { ExtEnv } from "../utils/extended-env"
 import { zValidator } from "../utils/z-validator"
 import { SubscriptionClient } from "database/src/clients/subscription-client"
-import { createFactory } from "hono/factory"
-import { LoggerFactory } from "shared/src/utils/logger"
 import { createSubscriptionSchema } from "database/src/validators/subscription"
 import { error, response, type ErrorResponse, type SuccessResponse } from "shared/src/response"
 import type { Subscription } from "database/src/drizzle/schema/subscription"
 import { ReCaptchaClient } from "../clients/recaptcha-client"
 import { reCaptchaTokenSchema } from "shared/src/validators/rechaptcha"
+import { AbstractRoute } from "./abstract-route"
 
 export type SubscriptionPostRouteConfig = {
   subscriptionClient: SubscriptionClient
   reCaptchaClient: ReCaptchaClient
 }
 
-export class SubscriptionPostRoute {
-  private logger = LoggerFactory.getLogger(SubscriptionPostRoute.name)
-  private factory = createFactory<ExtEnv>()
-
-  constructor(private config: SubscriptionPostRouteConfig) {}
+export class SubscriptionPostRoute extends AbstractRoute<ExtEnv> {
+  constructor(private config: SubscriptionPostRouteConfig) {
+    super()
+  }
 
   public handler = this.factory.createHandlers(
     zValidator("json", createSubscriptionSchema.and(reCaptchaTokenSchema)),
