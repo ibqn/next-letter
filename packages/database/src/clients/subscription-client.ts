@@ -1,6 +1,6 @@
 import { subscriptionTable, type Subscription } from "../drizzle/schema/subscription"
 import { db } from "../drizzle/db"
-import { BaseClient } from "./base-client"
+import { BaseClient } from "shared/src/clients/base-client"
 import type { CreateSubscriptionSchema, UpdateSubscriptionSchema } from "../validators/subscription"
 import { asc, countDistinct, desc, eq } from "drizzle-orm"
 import type { ParamIdSchema } from "../validators/param"
@@ -14,10 +14,7 @@ type GetSubscriptionItemsOptions = PaginationSchema
 
 export class SubscriptionClient extends BaseClient {
   async createSubscriptionItem(input: CreateSubscriptionSchema): Promise<Subscription> {
-    await db.insert(subscriptionTable).values(input).onConflictDoNothing()
-
-    const [subscription] = await db.select().from(subscriptionTable).where(eq(subscriptionTable.email, input.email))
-
+    const [subscription] = await db.insert(subscriptionTable).values(input).returning()
     return subscription satisfies Subscription
   }
 
