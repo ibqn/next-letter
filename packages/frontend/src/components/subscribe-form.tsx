@@ -10,6 +10,7 @@ import { subscriptionValidator, type SubscriptionPayload } from "@/lib/validator
 import { isAxiosError } from "axios"
 import Script from "next/script"
 import { env } from "@/lib/env"
+import type { ReCaptchaTokenSchema } from "shared/src/validators/rechaptcha"
 
 export const SubscribeForm = () => {
   const {
@@ -24,7 +25,7 @@ export const SubscribeForm = () => {
     },
   })
 
-  const subscriptionHandler = async (token: string, data: SubscriptionPayload) => {
+  const subscriptionHandler = async (data: SubscriptionPayload & ReCaptchaTokenSchema) => {
     try {
       await axios.post("/subscription", data)
       setValue("email", "")
@@ -42,9 +43,10 @@ export const SubscribeForm = () => {
   const onSubmit = handleSubmit(async (data) => {
     console.log(data)
 
-    grecaptcha.ready(function () {
-      grecaptcha.execute("reCAPTCHA_site_key", { action: "submit" }).then(function (token) {
-        // Add your logic to submit to your backend server here.
+    window.grecaptcha.ready(function () {
+      window.grecaptcha.execute(env.NEXT_PUBLIC_RE_CAPTCHA_SITE_KEY, { action: "subscription" }).then(function (token) {
+        console.log("token", token)
+        subscriptionHandler({ ...data, token })
       })
     })
   })
