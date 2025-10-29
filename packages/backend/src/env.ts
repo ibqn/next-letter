@@ -5,6 +5,7 @@ const envSchema = z.object({
   LOG_LEVEL: z.enum(["fatal", "error", "warn", "info", "debug", "trace", "silent"]),
   DATABASE_URL: z.url(),
   FRONTEND_URL: z.url(),
+  RE_CAPTCHA_SECRET_KEY: z.string().min(1, "reCAPTCHA secret key is required"),
 })
 
 export type env = z.infer<typeof envSchema>
