@@ -41,11 +41,10 @@ export const SubscribeForm = () => {
   }
 
   const onSubmit = handleSubmit(async (data) => {
-    console.log(data)
+    console.log("submitted data", data)
 
     window.grecaptcha.ready(function () {
       window.grecaptcha.execute(env.NEXT_PUBLIC_RE_CAPTCHA_SITE_KEY, { action: "subscription" }).then(function (token) {
-        console.log("token", token)
         subscriptionHandler({ ...data, token })
       })
     })
