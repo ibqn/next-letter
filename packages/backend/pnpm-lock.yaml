@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@hono/node-server':
-        specifier: ^1.19.5
-        version: 1.19.5(hono@4.10.3)
+        specifier: ^1.19.6
+        version: 1.19.6(hono@4.10.4)
       '@hono/zod-validator':
         specifier: ^0.7.4
-        version: 0.7.4(hono@4.10.3)(zod@4.1.12)
+        version: 0.7.4(hono@4.10.4)(zod@4.1.12)
       arctic:
         specifier: ^3.7.0
         version: 3.7.0
@@ -24,11 +24,11 @@ importers:
         specifier: workspace:*
         version: link:../database
       hono:
-        specifier: ^4.10.3
-        version: 4.10.3
+        specifier: ^4.10.4
+        version: 4.10.4
       hono-pino:
         specifier: ^0.10.3
-        version: 0.10.3(hono@4.10.3)(pino@10.1.0)
+        version: 0.10.3(hono@4.10.4)(pino@10.1.0)
       pino:
         specifier: ^10.1.0
         version: 10.1.0
@@ -207,8 +207,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@hono/node-server@1.19.5':
-    resolution: {integrity: sha512-iBuhh+uaaggeAuf+TftcjZyWh2GEgZcVGXkNtskLVoWaXhnJtC5HLHrU8W1KHDoucqO1MswwglmkWLFyiDn4WQ==}
+  '@hono/node-server@1.19.6':
+    resolution: {integrity: sha512-Shz/KjlIeAhfiuE93NDKVdZ7HdBVLQAfdbaXEaoAVO3ic9ibRSLGIQGkcBbFyuLr+7/1D5ZCINM8B+6IvXeMtw==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
       hono: ^4
@@ -369,8 +369,8 @@ packages:
       hono: '>=4.0.0'
       pino: '>=7.1.0'
 
-  hono@4.10.3:
-    resolution: {integrity: sha512-2LOYWUbnhdxdL8MNbNg9XZig6k+cZXm5IjHn2Aviv7honhBMOHb+jxrKIeJRZJRmn+htUCKhaicxwXuUDlchRA==}
+  hono@4.10.4:
+    resolution: {integrity: sha512-YG/fo7zlU3KwrBL5vDpWKisLYiM+nVstBQqfr7gCPbSYURnNEP9BDxEMz8KfsDR9JX0lJWDRNc6nXX31v7ZEyg==}
     engines: {node: '>=16.9.0'}
 
   joycon@3.1.1:
@@ -547,13 +547,13 @@ snapshots:
   '@esbuild/win32-x64@0.25.11':
     optional: true
 
-  '@hono/node-server@1.19.5(hono@4.10.3)':
+  '@hono/node-server@1.19.6(hono@4.10.4)':
     dependencies:
-      hono: 4.10.3
+      hono: 4.10.4
 
-  '@hono/zod-validator@0.7.4(hono@4.10.3)(zod@4.1.12)':
+  '@hono/zod-validator@0.7.4(hono@4.10.4)(zod@4.1.12)':
     dependencies:
-      hono: 4.10.3
+      hono: 4.10.4
       zod: 4.1.12
 
   '@oslojs/asn1@1.0.0':
@@ -725,13 +725,13 @@ snapshots:
 
   help-me@5.0.0: {}
 
-  hono-pino@0.10.3(hono@4.10.3)(pino@10.1.0):
+  hono-pino@0.10.3(hono@4.10.4)(pino@10.1.0):
     dependencies:
       defu: 6.1.4
-      hono: 4.10.3
+      hono: 4.10.4
       pino: 10.1.0
 
-  hono@4.10.3: {}
+  hono@4.10.4: {}
 
   joycon@3.1.1: {}
 
